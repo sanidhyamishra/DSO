@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DCI SPORTS OLYMPIAD</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="jquery/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script>
+        var name = atob(window.location.href.split('=')[1]);
+        $(document).ready(function() {
+        	 $("#loginName").html(name);
+            $('#mymodal').click(function() {
+                $("#loginName").html(name);
+            });
+        }); 
+
+        window.onload = function() {
+            with(new XMLHttpRequest()) {
+                onreadystatechange = cb;
+                open('GET', 'BMI.csv', true);
+                responseType = 'text';
+                send();
+            }
+        }
+
+        function cb() {
+            if (this.readyState === 4){
+            	var response=tbl(this.responseText);
+            	if(response.trim()==''){
+            		document.getElementById('main').innerHTML ="Not Registered";
+            	}else{
+            	document.getElementById('main').innerHTML = response;
+            	}
+            }
+            	
+                
+        }
+
+        function tbl(csv) {
+            return csv.split('\n').map(
+                function(tr, i) {
+                    if (name.toUpperCase()  === tr.substring(0, tr.indexOf(","))) {
+                        return '<tr><td>' + tr.replace(/\t/g, '</td><td>').substring(
+                            tr.lastIndexOf(",") + 1, tr.length) + '</td></tr>';
+                    }
+                }).join('\n');
+        }
+        $(document).ready(function() {
+            $('img').on('click', function() {
+                $("#showImg").empty();
+                var image = $(this).attr("src");
+                $("#showImg").append("<img style='width: 100%;' class='img-responsive'  src='" + image + "' />")
+            })
+        });
+    </script>
+    <style>
+        .my-img a {
+            display: inline-block;
+            margin: 10px;
+            border: 2px solid #CCC;
+        }
+        
+        .my-img a:hover {
+            border: 2px solid #45AFFF;
+        }
+        
+        .modal-lg {
+            width: 90%;
+        }
+        
+        .modal-body {
+            overflow: auto;
+            max-height: auto;
+        }
+        
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            font-family: 'Siemens Sans Bold'
+        }
+        
+        .accordion:hover {
+            background-color: #ccc;
+        }
+        
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        
+        .accordion .active:after {
+            content: "\2212";
+        }
+        
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    </style>
+
+    <style>
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Header -->
+    <nav class="navbar navbar-expand-sm bg-white navbar-light header-base sticky-top">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#"><img src="./images/sie_logo_claim_petrol_rgb.png" alt="Siemens" style="width: 150px; border:0px"></a>
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="https://inggn001trmsrv.ad001.siemens.net/dci/">Home</a></li>
+                </ul>
+                <div class="navbar-head-right ml-auto">
+                <span><i class="fa fa-fw fa-user"></i> <span id="loginName"></span></span>
+                <h3 class="navbar-head-right ml-auto">DCI SPORTS OLYMPIAD</h3>
+                </div>                
+            </div>
+
+        </div>
+    </nav>
+	    <!-- Image Carousel -->
+	    <div id="head-intro" class="carousel slide" data-ride="carousel">
+	
+	        <!-- Indicators -->
+	        <ul class="carousel-indicators">
+	            <li data-target="#head-intro" data-slide-to="0" class="active"></li>
+	            <li data-target="#head-intro" data-slide-to="1"></li>
+	            <li data-target="#head-intro" data-slide-to="2"></li>
+	            <li data-target="#head-intro" data-slide-to="3"></li>
+	        </ul>
+	
+	        <!-- The slideshow -->
+	        <div class="carousel-inner">
+	            <div class="carousel-item active">
+	                <img src="./images/poster.png" alt="SPORTS OLYMPIAD" class="d-block img-fluid">
+	            </div>
+	            <div class="carousel-item">
+	                <img src="./images/Runathon-2019.jpeg" alt="Runathon-2019" class="d-block img-fluid">
+	            </div>
+	            <div class="carousel-item">
+	                <img src="./images/Table_Tennis_Jan_2019.JPG" alt="Table Tennis Jan-2019" class="d-block img-fluid">
+	            </div>
+	            <div class="carousel-item">
+	                <img src="./images/MedalTally.jpg" alt="Medal Tally" class="d-block img-fluid" style="display: block;">
+	            </div> 
+	        </div>
+	
+	        <!-- Left and right controls -->
+	        <a class="carousel-control-prev" href="#head-intro" data-slide="prev">
+	            <span class="carousel-control-prev-icon"></span>
+	        </a>
+	        <a class="carousel-control-next" href="#head-intro" data-slide="next">
+	            <span class="carousel-control-next-icon"></span>
+	        </a>
+	
+	    </div>
+    <!-- Tabs -->
+    <div class="container-fluid p-0">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li class="nav-item tab-margin-left"><a class="nav-link active" data-toggle="tab" href="#pastactivites">Sports Activites</a></li>
+            <li class="nav-item tab-margin-right"><a class="nav-link" data-toggle="tab" href="#currentactivities">Health Challenge</a></li>
+        </ul>
+    </div>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+        <div id="pastactivites" class="container tab-pane active">
+            <br>
+            <div class="row" style="background: white; padding: 20px;">
+                <div class="col-md-12">
+                    <h3 class="mb-4">Winning the workplace leads to winning the
+						marketplace!</h3>
+                    <p>This statement is well supported by a famous corporate term ‘Employee Engagement’. When it comes to an engrossing and entertaining employee engagement initiative, the first thing strikes in our mind is - ‘Sports’.</p>
+                    <p>It is all about sports for health and collaboration. Since, it is buzzing around the corner for a while, we have managed to ignite the sparks in the employees for showcasing their talents. The Olympiad brings an existing package loaded with plethora of activities like - Indoor games, Health challenges, Runathon and many more. So far, it has been existing to see the level of curiousness and ebullience in each individual</p>
+                    <p>The objective of this initiative is to enhance both physical and mental well-being. Being healthier and happier keep our inner spirit always high. At Siemens, we encourage each employee to become a team player. Because, whether it’s a personal or professional front, the strength of a team typically lies in the potential of each member. And, the ultimate strength of individual member is the team itself. Such team exercise in the form of games act as a relationship building tool which reflects into the work and further gets translated into powerful results.</p>
+                    <p>Siemens is high on culture & values and such amazing employee engrossing programs plays a crucial role in it. We create a working platform where employees can connect themselves with the organizational goal and get equal opportunity to grow along with the company. We see it as a responsibility to keep our employees happy, motivated, and committed for long term association.</p>
+                    <p>Let’s blow off the steam build up in the intense work environment and boost the morale!! Let’s unleash your inner strength and reveal the champion in you before everyone!!</p>
+                </div>
+            </div>
+
+            <p>The Olympiad brings an existing package loaded with plethora of activities like - Indoor games, Health challenges, Runathon and many more..</p>
+            <button class="accordion">Sprint 1- TT Tournament</button>
+            <div class="panel">
+                <div class="row activites_base">
+                    <div class="col-md-6 text-center">
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myTTMOdel" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body" id="showImg">
+                                        <!-- here we create the image dynamically -->
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/club member.png" alt="TableTannis" style="width: 150px"> </a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/invite.png" alt="TableTannis" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/TT invite.png" alt="TableTannis" style="width: 150px"> </a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/finalist.png" alt="TableTannis" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC00569.JPG" alt="TableTannis" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC00682.JPG" alt="TableTannis" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC00955.JPG" alt="TableTannis" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel"> <img src="./images/DSC00968.JPG" alt="TableTannis" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC00740.JPG" alt="TableTannis" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC00715.JPG" alt="TableTannis" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC00668.JPG" alt="TableTannis" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel"> <img src="./images/DSC00872.JPG" alt="TableTannis" style="width: 150px"></a>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row" style="background: white; padding: 20px;">
+                            <div class="col-md-12">
+                                <img src="./images/TTWinner.jpg" alt="Stay Fit" style="width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="accordion">Sprint 2- Cricket Tournament</button>
+            <div class="panel">
+                <div class="row activites_base">
+                    <div class="col-md-6 text-center">
+
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC02444.JPG" alt="Cricket" style="width: 150px"> </a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC02451.JPG" alt="Cricket" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC02452.JPG" alt="Cricket" style="width: 150px"> </a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC02524.JPG" alt="Cricket" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC02532.JPG" alt="Cricket" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC02585.JPG" alt="Cricket" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/DSC02642.JPG" alt="Cricket" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel"> <img src="./images/DSC024512.JPG" alt="Cricket" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/IMG_0728.JPG" alt="Cricket" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/IMG_0728.JPG" alt="Cricket" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel">
+                            <img src="./images/IMG_0735.JPG" alt="Cricket" style="width: 150px"></a>
+                        <a href="#" id="link1" data-toggle="modal" data-target="#myTTMOdel"> <img src="./images/DSC02483.JPG" alt="Cricket" style="width: 150px"></a>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row" style="background: white; padding: 20px;">
+                            <div class="col-md-12">
+                                <img src="./images/cricketWinner.png" alt="Stay Fit" style="width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="accordion">Sprint 3</button>
+            <div class="panel">
+                <br>
+                <p>Coming Soon...
+                    <p>
+            </div>
+
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.maxHeight) {
+                            panel.style.maxHeight = null;
+                        } else {
+                            panel.style.maxHeight = panel.scrollHeight + "px";
+                        }
+                    });
+                }
+            </script>
+        </div>
+
+        <div id="currentactivities" class="container tab-pane fade">
+            <br>
+
+            <div class="row activites_base">
+                <div class="col-md-6 text-center">
+                    <img src="./images/stayfit.png" alt="six month challenge" style="width: 80%;">
+                </div>
+                <div class="col-md-6">
+                    <div class="row" style="background: white; padding: 20px;">
+                        <div class="col-md-12">
+                            <h3 class="mb-4">Six Month Health Challenge !!!</h3>
+                            <p>1. BMI (Body Mass Index) is a measurement of body fat based on height and weight that applies to both men and women between the ages of 18 and 65 years.</p>
+                            <p>2. BMI can be used to indicate if you are overweight, obese, underweight or normal. A healthy BMI score is between 18.5 and 25.</p>
+                            <p>3. A score below 18.5 indicates that you may be underweight; a value above 25 indicates that you may be overweight.
+                            </p>
+                            <button type="button" id="mymodal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Click here to see your BMI.</button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myModalLabel" style="font-family: sans-serif;">Your BMI..</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table style="border: 1px solid transparent;" id="main"></table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-center">
+                <h3>Contact Us</h3>
+                <a href="mailto:nivedita.gupta@siemens.com"><img src="./images/183573-16.png" class="mr-2" alt="">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

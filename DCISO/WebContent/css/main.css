@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'Siemens Sans Roman';
+    src: url(../fonts/siemens_global_roman.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Siemens Sans Bold';
+    src: url(../fonts/siemens_global_bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Siemens Sans Italic';
+    src: url(../fonts/siemens_global_italic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Siemens Sans Italic Bold';
+    src: url(../fonts/siemens_global_bolditalic.ttf) format('truetype');
+}
+
+body{
+    font-family: 'Siemens Sans Roman';
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.header-base{
+    border-bottom: 2px solid #dfe6ed;
+    transition: opacity linear, top .3s linear;
+}
+
+.bg-white{
+    background: white;
+}
+
+.navbar-head-right{
+    font-family: 'Siemens Sans Bold';
+    color: #009999;
+}
+
+.carousel-inner img {
+    width: 100%;
+    
+}
+
+.carousel-caption{
+    text-align: left !important;
+    top: 50px;
+}
+
+@media (min-width: 1025px){
+    .carousel-caption{
+        top: 150px;
+    }
+}
+
+@media (max-width: 768px){
+    .carousel-caption{
+        position: relative;
+        right: 0%;
+        padding-top: 0px;
+        left: 0%;
+        top: 0px;
+        width: 100%;
+    }
+
+    .carousel-caption .col-md-9{
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 480px){
+    .carousel-caption{
+        position: relative;
+        right: 0%;
+        padding-top: 0px;
+        left: 0%;
+        top: 0px;
+        width: 100%;
+    }
+}
+
+.bg-sie{
+    background: linear-gradient(to right,rgba(80,190,190,0.7) 0,rgba(0,153,153,0.7) 50%,rgba(0,153,176,0.7) 83%,rgba(0,153,203,0.7) 100%);
+    padding: 20px 30px;
+}
+
+.smartpanel h5{
+    font-family: 'Siemens Sans Italic';
+}
+
+.nav-tabs{
+    background: #ebf0f5;
+    border: none;
+}
+
+.nav-tabs .nav-link.active{
+    border-color: #fff;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: #fff;
+    background: #dde6ee;
+    color: #2d373c;
+}
+
+.nav-link{
+    color: #2d373c;
+}
+
+.nav-item{
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.tab-margin-left{
+    margin-left: 15%;
+}
+
+.tab-margin-right{
+    margin-right: 15%;
+}
+
+@media(max-width: 480px){
+    .tab-margin-left{
+        margin-left: 2%;
+    }
+    
+    .tab-margin-right{
+        margin-right: 2%;
+    }
+}
+
+@media(max-width: 768px){
+    .tab-margin-left{
+        margin-left: 5%;
+    }
+    
+    .tab-margin-right{
+        margin-right: 5%;
+    }
+}
+
+.teaserlist_base ul{
+    list-style-type: none;
+}
+
+.teaserlist li{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #ebf0f5;
+    padding: 20px 45px 20px 20px;
+    color: #2d373c;
+    font-family: 'Siemens Sans Bold';
+}
+
+.activites_base{
+    background: #ebf0f5;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.footer {
+    position: relative;
+    margin-top: 10%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ebf0f5;
+    color: #005578;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer a{
+    color: #005578;
+  }
